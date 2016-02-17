@@ -1,0 +1,167 @@
+extends ../../common/templates/layout/base
+
+block homepage-header
+	.home-header: .container
+		//-img(src='/images/logo-inverted.svg', alt='KeystoneJS', width=80, height=81)
+		h1 NebulosaJS a Node.js CMS &amp; Web Application Platform
+		h2 The open source framework for developing database-driven websites, applications and APIs in Node.js. Built on Express and MongoDB.
+		.home-header-buttons
+			a(href='/getting-started', title='KeystoneJS getting started guide').btn.btn-lg.btn-primary
+				span.hidden-xs Get Started
+				span.visible-xs Start
+			
+		ul.home-header-list-links
+			li: a(href='/docs', title='NebulosaJS Documentation') Read the Documentation
+			li Current version #{version}
+			li: a(href='https://github.com/altairstudios/nebula/blob/master/HISTORY.md', target='_blank', title='View Changelog on GitHub') What's new
+			li Free and open source (MIT)
+		ul.home-header-list-social
+			li.hidden-xs: a(href='/examples', title='Sample Applications')
+				i.entypo.entypo-network
+				span.home-header-social-item See examples
+			li: a(href='https://twitter.com/nebulosajs', target='_blank')
+				i.entypo-social.entypo-twitter
+				span.home-header-social-item Follow @NebulosaJS on Twitter
+			li: a(href='http://github.com/altairstudios/nebula', target='_blank')
+				i.entypo-social.entypo-github
+				span.home-header-social-item Star on Github
+
+
+block content
+	//- section.intro-section.whatis-section: .container
+		.section-header
+			h2 What is KeystoneJS
+			p.lead Keystone is the easiest way to build a web application or content-managed website in Node.js
+	section.intro-section.building-section: .container
+		.section-header
+			h2 Get a head-start on the features you need
+			p.lead NebulosaJS is the easiest way to build database-driven websites, applications and APIs in Node.js.
+		.row
+			.col-sm-6.col-md-4.col-lg-3
+				.feature-panel
+					span.feature-icon.entypo.entypo-leaf
+					.feature-content
+						h4 Express.js and MongoDB
+						p NebulosaJS will configure express - the de facto web server for node.js - for you and connect to your MongoDB database using Mongoose, the leading ODM package.
+			.col-sm-6.col-md-4.col-lg-3
+				.feature-panel
+					span.feature-icon.entypo.entypo-shuffle
+					.feature-content
+						h4 Dynamic Routes
+						p NebulosaJS starts with best practices for setting up your MV* application, and makes it easy to manage your templates, views and routes.
+			.col-sm-6.col-md-4.col-lg-3
+				.feature-panel
+					span.feature-icon.entypo.entypo-picture
+					.feature-content
+						h4 Database Fields
+						p IDs, Strings, Booleans, Dates and Numbers are the building blocks of your database. NebulosaJS builds on these with useful, real-world field types like name, email, password, address, image and relationship fields (and more)
+			.col-sm-6.col-md-4.col-lg-3
+				.feature-panel
+					span.feature-icon.entypo.entypo-light-bulb
+					.feature-content
+						h4 Auto-generated Admin UI
+						p Whether you use it while you're building out your application, or in production as a database content management system, NebulosaJS's Admin UI will save you time and make managing your data easy.
+			.col-sm-6.col-md-4.col-lg-3
+				.feature-panel
+					span.feature-icon.entypo.entypo-pencil
+					.feature-content
+						h4 Simpler Code
+						p Sometimes, async code can get complicated to do simple things. NebulosaJS helps keep simple things - like loading data before displaying it in a view - simple.
+			.col-sm-6.col-md-4.col-lg-3
+				.feature-panel
+					span.feature-icon.entypo.entypo-docs
+					.feature-content
+						h4 Form Processing
+						p Want to validate a form, upload an image, and update your database with a single line? NebulosaJS can do that, based on the data models you've already defined.
+			.col-sm-6.col-md-4.col-lg-3
+				.feature-panel
+					span.feature-icon.entypo.entypo-users
+					.feature-content
+						h4 Session Management
+						p NebulosaJS comes ready out of the box with session management and authentication features, including automatic encryption for password fields.
+			.col-sm-6.col-md-4.col-lg-3
+				.feature-panel
+					span.feature-icon.entypo.entypo-paper-plane
+					.feature-content
+						h4 Email Sending
+						p NebulosaJS makes it easy to set up, preview and send template-based emails for your application. It also integrates with Mandrill (Mailchimp's excellent transaction email sending service)
+			.col-sm-6.col-md-4.col-lg-3.hidden-sm.hidden-lg
+				.feature-panel
+					span.feature-icon.entypo.entypo-publish
+					.feature-content
+						h4 Managed Updates
+						p NebulosaJS includes an optional updates framework, that can take care of running update scripts for you, making it easy to transition from development to production.
+	
+	
+		
+	section.intro-section.admin-section
+		.container: .section-header
+			h2 Admin Interface
+			p.lead NebulosaJS gives you a beautiful, customisable Admin UI based on your models
+		.container.admin-image-full
+			img(src='/images/home/admin-interface.png').img-responsive
+		//- .container-sm
+			.row
+				.col-sm-6
+					h3 Everything you need
+					p Create, manage, edit, delete. Keystone's Admin UI takes care of the basics so you don't have to.
+					p Configure which fields are editable, which models are creatable, and customise everything to your heart's content.
+				.col-sm-6
+					.admin-image: img(src='/images/home/inline-item-creation.png').img-responsive.img-circle
+			.row
+				.col-sm-6.col-sm-push-6
+					h3 Responsive &amp; Themeable
+					p Want to use your CMS on the go? with Keystone you can.
+					p Keystone's Admin UI is built on Bootstrap 3, and works with all screen sizes and devices.
+					p You can also change the theme (or remove ours) using one of the most popular css frameworks on the internet.
+				.col-sm-6.col-sm-pull-6
+					.admin-image: img(src='/images/home/responsive-design.png').img-responsive.img-circle
+			.row
+				.col-sm-6
+					h3 Sophisticated Filtering
+					p Keystone's Admin UI goes beyond just searching and lets you visually create your own queries, based on any field in your database.
+					p Each field type has its own rules and UI - so you can filter by dates, locations and more.
+				.col-sm-6
+					.admin-image: img(src='/images/home/sophisticated-filtering.png').img-responsive.img-circle
+			.row
+				.col-sm-6.col-sm-push-6
+					h3 Beautiful forms
+					p Keystone doesn't just understand the structure of your data - it understands the intention of your data.
+					p So date fields become date pickers, HTML fields become WYSIWYG editors, and relationships become search boxes.
+					p Fields can also depend on conditions, so complex forms become simple.
+				.col-sm-6.col-sm-pull-6
+					.admin-image: img(src='/images/home/sophisticated-fields.png').img-responsive.img-circle
+	
+	
+	section.intro-section.tools-section
+		span.tool-icon.tool-icon__cloud.entypo.entypo-cloud
+		span.tool-icon.tool-icon__rocket.entypo.entypo-rocket
+		.container
+			.section-header
+				h2.text-center What you build is up to you.
+				p.lead There are a lot of frameworks that make decisions for you, and many that take decisions away. Keystone doesn't do that. Use the features that suit you, and replace the ones that don't.
+			.big-icon
+				span.entypo.entypo-tools
+			.row
+				.col-sm-6.col-md-3
+					h4 Built on Express
+					p Keystone can configure Express for you, or you can take over and treat Keystone like any other Express middleware.
+					p You can also easily integrate it into an existing Express app.
+				.col-sm-6.col-md-3
+					h4 Powered by MongoDB
+					p Keystone uses Mongoose, the leading ODM for node.js and MongoDB, and gives you a single place for your schema, 
+						| validation rules and logic.
+					p So anything you can build with MongoDB, you can build with Keystone.
+				.col-sm-6.col-md-3
+					h4 Lightweight and flexible
+					p Keystone is designed to be as light as you want - you can pick and choose the features you want to include.
+					p Create your own routes, your own database schema, and use any template language you like.
+				.col-sm-6.col-md-3
+					h4 Extendable
+					p One of the greatest things about node.js is the vast number of quality packages available.
+					p Keystone is designed to let you use any of them, without losing the benefits it provides.
+	
+	
+	
+block js
+	script(async='', src='//platform.twitter.com/widgets.js', charset='utf-8')

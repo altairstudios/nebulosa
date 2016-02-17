@@ -1,0 +1,90 @@
+//- common mixins
+include ../mixins/breadcrumbs
+
+doctype html
+html(lang=language)
+	head
+		script.
+			var _sf_startpt=(new Date()).getTime()
+		meta(charset="utf-8")
+		meta(name="viewport", content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width")
+		title NebulaJS
+			if title
+				|  &middot; #{title}
+		meta(name="keywords" content="node.js,nodejs,cms,publishing,platform,web,development,framework,express,mongo,mongodb,bootstrap,react,jquery")
+		meta(name="description" content="Get a head-start on the features you need. NebulaJS is the easiest way to build dynamic websites, applications and APIs with Node.js and MongoDB.")
+		meta(property="og:locale" content="en-us")
+		meta(property="og:title" content="NebulaJS")
+		meta(property="og:description" content="NebulaJS is an open source Node.js CMS and web application platform built on Express and MongoDB.")
+		meta(property="og:url" content="http://altairstudios.github.io/nebula/^current_url^")
+		meta(property="og:site_name" content="NebulaJS")
+		meta(property="og:type" content="article")
+		link(href="http://fonts.googleapis.com/css?family=Roboto:100,300,300italic,400,500,700", rel="stylesheet")
+		link(href='#{websiteurl}styles/site.min.css', rel="stylesheet")
+		link(href='#{websiteurl}styles/prism.css', rel="stylesheet")
+		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+		block css
+
+	body
+		
+		.language-switcher: .container
+			a(href=languages.en.links[section] class=(language === 'en' ? 'active' : '')).language-switcher-option English
+		block homepage-header
+		
+		if section !== 'home'
+			header(role='banner').docs-header: .container
+				button.navbar-toggle.navbar-toggle-menu(type='button', data-toggle='collapse', data-target='.docs-nav__collapse')
+					span.sr-only= content.toggle_navigation
+					//- span.entypo.entypo-list
+					!='<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>'
+				a(href=prefix, title='NebulaJS').header-title.keystone-logo NebulosaJS
+					//-img(src='/images/logo.svg', alt='NebulaJS', width=207, height=70)
+				
+				nav.docs-nav
+					.docs-nav__collapse.collapse
+						ul.docs-nav__nav
+							each item in primarynav
+								li(class=section == item.section ? 'active' : null): a(href=item.path)= item.label
+
+
+		
+		if section === 'docs' && docssubsection
+			+breadcrumbs(docssection, docssubsection)
+		else
+			block intro
+			
+		.docs-body
+			block content
+		
+		.docs-footer
+			.container
+				p
+					| Created by 
+					a(href='http://twitter.com/juanbenavidesr', target='_blank') @juanbenavidesr
+					|  under the 
+					a(href='http://opensource.org/licenses/MIT', target='_blank') MIT License
+				ul.list-inline
+					li: a(href=prefix + 'getting-started', title='NebulaJS Getting Started') Getting Started
+					li: a(href=prefix + 'docs', title='NebulaJS Documentation') Documentation
+					li: a(href='https://github.com/altairstudios/nebula', target='_blank', title='Github Project (new window)') Github Project
+		.docs-footer-floor
+			.container
+				.social-buttons
+					.social-button.social-button__twitter: a(href="https://twitter.com/nebulosajs", class="twitter-follow-button", data-show-count="true") Follow @nebulosajs
+					.social-button.social-button__github: iframe(src="http://ghbtns.com/github-btn.html?user=keystonejs&repo=keystone&type=watch&count=true", allowtransparency="true", frameborder=0, scrolling=0, width=86, height=20)
+
+		
+		script(src='#{websiteurl}js/lib/jquery/jquery-1.10.2.min.js')
+		script(src='#{websiteurl}js/lib/bootstrap/collapse.js')
+		script(src='#{websiteurl}js/lib/prism/prism.min.js')
+		script(src='#{websiteurl}js/anchor-links.js')
+		script(src='#{websiteurl}js/api-code.js')
+			
+		//- Twitter
+		script.
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+		
+		//- Page Scripts
+		block js
+		
+		

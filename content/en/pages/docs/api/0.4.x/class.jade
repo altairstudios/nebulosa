@@ -1,0 +1,40 @@
+extends ../../../../../common/templates/layout/base
+
+include ../../../../templates/mixins/docsapinav
+
+block intro
+	.page-header
+		.container
+			h1 Class Reference 
+			p.lead incoming (#{branch})
+	
+block content
+	.container: .row
+		
+		.col-sm-3
+			+docsnav(docssection)
+		
+		.col-sm-9: .docs-content
+			h2
+				a(name='methods')
+				| #{api}  reference
+				
+			a(name='changelog')
+			h3  0.3.x to 0.4.x Changes
+			include:marked markdown/class/static/0.3.x-to-0.4.x-Changes.md
+			
+			each val, ref in apidocs
+				each item in val.list
+					unless item.name
+						a(name='main-#{item.keys}')
+						h3 !{item.header}
+						!= item.html
+						hr
+					unless item.main
+						a(name='#{item.keys}-#{item.name}')
+						!= item.html
+						hr
+			input(type="hidden" id="_version" value="#{_version}")
+			input(type="hidden" id="_path" value="#{path}")
+			input(type="hidden" id="_api" value="#{api}")
+			input(type="hidden" id="_branch" value="#{branch}")
