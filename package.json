@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/altairstudios/nebula.git"
+    "url": "https://github.com/altairstudios/nebulosa.git"
   },
   "dependencies": {
     "async": "^1.4.2",
@@ -119,7 +119,7 @@
   ],
   "readmeFilename": "README.md",
   "bugs": {
-    "url": "https://github.com/altairstudios/nebula/issues"
+    "url": "https://github.com/altairstudios/nebulosa/issues"
   },
   "scripts": {
     "build": "NODE_ENV=production gulp build-packages",

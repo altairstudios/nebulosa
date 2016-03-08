@@ -1,6 +1,6 @@
-[NebulaJS](http://altairstudios.github.io/nebula/) is a powerful Node.js content management system and web app framework built on [express](http://expressjs.com) and [mongoose](http://mongoosejs.com). Nebula makes it easy to create sophisticated web sites and apps, and comes with a beautiful auto-generated Admin UI.
+[NebulosaJS](http://altairstudios.github.io/nebulosa/) is a powerful Node.js content management system and web app framework built on [express](http://expressjs.com) and [mongoose](http://mongoosejs.com). Nebula makes it easy to create sophisticated web sites and apps, and comes with a beautiful auto-generated Admin UI.
 
-Check out [http://altairstudios.github.io/nebula/](http://http://altairstudios.github.io/nebula/) for documentation and guides.
+Check out [http://altairstudios.github.io/nebulosa/](http://http://altairstudios.github.io/nebulosa/) for documentation and guides.
 
 ## About
 
