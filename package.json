@@ -1,6 +1,6 @@
 {
   "name": "nebulosa",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Fork of Keystone with Json Field. Web Application Framework and Admin GUI / Content Management System built on Express.js and Mongoose",
   "main": "index.js",
   "repository": {
