@@ -42,7 +42,7 @@ var lessOptions = {
 
 /* Configure router */
 
-router.use('/styles', less(path.resolve(__dirname + '/../public/styles', lessOptions)));
+router.use('/styles', less(path.resolve(__dirname + '/../public/styles'), lessOptions));
 router.use(express.static(path.resolve(__dirname + '/../public')));
 router.get('/js/fields.js', bundles.fields.serve);
 router.get('/js/home.js', bundles.home.serve);
